@@ -1,0 +1,19 @@
+name: Merge JSON
+description: ...
+author: Erlend Klakegg Bergheim
+
+inputs:
+  file:
+    description: Source file
+    required: true
+  data:
+    description: Content to merge into file (yaml)
+    required: true
+
+branding:
+  color: green
+  icon: command
+
+runs:
+  using: node12
+  main: index.js
