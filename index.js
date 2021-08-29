@@ -5,10 +5,10 @@ const fs = require("fs");
 const yaml = require("js-yaml");
 const merge = require("lodash.merge");
 async function run() {
-    var file = core.getInput('file', { required: true });
-    var data = core.getInput('data', { required: true });
-    var func_parse = JSON.parse;
-    var func_dump = JSON.stringify;
+    const file = core.getInput('file', { required: true });
+    const data = core.getInput('data', { required: true });
+    var func_parse = (value) => JSON.parse(value);
+    var func_dump = (value) => JSON.stringify(value);
     if (file.match(/\.y[a]?ml$/)) {
         func_parse = yaml.load;
         func_dump = yaml.dump;
