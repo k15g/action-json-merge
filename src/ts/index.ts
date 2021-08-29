@@ -6,12 +6,12 @@ import merge = require('lodash.merge')
 async function run() {
 
     // Get inputs
-    var file = core.getInput('file', { required: true })
-    var data = core.getInput('data', { required: true })
+    const file = core.getInput('file', { required: true })
+    const data = core.getInput('data', { required: true })
 
     // Prepare functions for handling source data
-    var func_parse: any = JSON.parse
-    var func_dump: any = JSON.stringify
+    var func_parse = (value: string) => JSON.parse(value)
+    var func_dump = (value: any) => JSON.stringify(value)
 
     // Support for handling yaml in addition to json
     if (file.match(/\.y[a]?ml$/)) {
